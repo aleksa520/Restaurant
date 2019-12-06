@@ -1,0 +1,146 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Restaurant">
+
+
+    <!--#region Resources -->
+
+    <SolidColorBrush x:Key="ThemePrimaryColor" Color="#626D71"/>
+    <SolidColorBrush x:Key="ThemeSecondaryColor" Color="#8EBA43"/>
+    <SolidColorBrush x:Key="ThemeTertiaryColor" Color="#4B7447"/>
+    <SolidColorBrush x:Key="ThemeWhite" Color="White"/>
+    <SolidColorBrush x:Key="ThemeBlack" Color="Black"/>
+
+    <FontFamily x:Key="RobotoBold">/Assets/Fonts/Roboto/Roboto-Bold.ttf.#Roboto</FontFamily>
+    <FontFamily x:Key="RobotoCondensedLight">/Assets/Fonts/Roboto/RobotoCondensed-Light.ttf#Roboto</FontFamily>
+    <FontFamily x:Key="RobotoCondensedRegular">/Assets/Fonts/Roboto/RobotoCondensed-Regular.ttf#Roboto</FontFamily>
+    <FontFamily x:Key="RobotoRegular">/Assets/Fonts/Roboto/Roboto-Regular.ttf#Roboto</FontFamily>
+
+    <!--<Image x:Key="SearchImage" Source="/Assets/search.png"/>-->
+
+    <!--#endregion-->
+
+    <!--#region Border-->
+
+    <Style TargetType="Border" x:Key="Border">
+        <Setter Property="BorderBrush" Value="{StaticResource ThemeWhite}"/>
+        <Setter Property="BorderThickness" Value="0 0 0 2"/>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Header-->
+
+    <Style TargetType="Grid" x:Key="HeaderGrid">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="{StaticResource ThemeTertiaryColor}"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HeaderText">
+        <Setter Property="FontFamily" Value="{StaticResource RobotoCondensedRegular}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeWhite}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="ContentText">
+        <Setter Property="FontFamily" Value="{StaticResource RobotoCondensedRegular}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemePrimaryColor}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="ContentText2">
+        <Setter Property="FontFamily" Value="{StaticResource RobotoCondensedRegular}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeTertiaryColor}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="HeaderButton">
+        <Setter Property="Background" Value="{StaticResource ThemeTertiaryColor}"/>
+        <Setter Property="Foreground" Value="Transparent"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="HeaderButtonImage">
+        <Setter Property="Height" Value="45"/>
+        <Setter Property="Width" Value="55"/>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Home -->
+
+    <Style TargetType="StackPanel" x:Key="HomeButtonStackPanel">
+        <Setter Property="Orientation" Value="Vertical"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="HomeButton">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Background" Value="{StaticResource ThemeSecondaryColor}"/>
+    </Style>
+
+    <Style TargetType="Image" x:Key="HomeButtonImage">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="Height" Value="100"/>
+        <Setter Property="Width" Value="100"/>
+
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="HomeButtonText">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="45"/>
+        <Setter Property="FontFamily" Value="{StaticResource RobotoBold}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeWhite}"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region Functionalities -->
+
+    <Style TargetType="TextBox" x:Key="BasicTextBox">
+        <Setter Property="FontFamily" Value="{StaticResource RobotoBold}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemePrimaryColor}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="BasicTextBlock">
+        <Setter Property="FontFamily" Value="{StaticResource RobotoBold}"/>
+        <Setter Property="Foreground" Value="{StaticResource ThemeWhite}"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style TargetType="TextBlock" x:Key="TitleTextBlock" BasedOn="{StaticResource BasicTextBlock}">
+        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="Button" x:Key="BasicButton">
+        <Setter Property="Background" Value="{StaticResource ThemePrimaryColor}"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="Margin" Value="3"/>
+    </Style>
+
+    <!--#endregion-->
+
+
+</ResourceDictionary>

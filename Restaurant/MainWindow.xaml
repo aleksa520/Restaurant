@@ -1,0 +1,43 @@
+﻿<Window x:Class="Restaurant.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Restaurant"
+        xmlns:home="clr-namespace:Restaurant.Home"
+        xmlns:restaurant="clr-namespace:Restaurant.Restaurant1"
+        xmlns:table="clr-namespace:Restaurant.Table"
+        xmlns:tableHolder="clr-namespace:Restaurant.TableHolder" 
+        xmlns:common="clr-namespace:Restaurant.Common"
+        mc:Ignorable="d"
+        Title="MainWindow" ResizeMode="NoResize">
+    <Window.Resources>
+        <common:AutoDataTemplateSelector x:Key="AutoDataTemplateSelector" />
+    </Window.Resources>
+
+    <Grid>
+        <ContentControl x:Name="mainContent"
+                        ContentTemplateSelector="{StaticResource AutoDataTemplateSelector}"
+                        Content="{Binding CurrentViewModel}"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        HorizontalContentAlignment="Stretch"
+                        VerticalContentAlignment="Stretch"
+                        >
+            <ContentControl.Resources>
+                <DataTemplate x:Key="HomeViewModel">
+                    <home:HomeView/>
+                </DataTemplate>
+                <DataTemplate x:Key="RestaurantViewModel">
+                    <restaurant:RestaurantView/>
+                </DataTemplate>
+                <DataTemplate x:Key="TableViewModel">
+                    <table:TableView/>
+                </DataTemplate>
+                <DataTemplate x:Key="TableHolderViewModel">
+                    <tableHolder:TableHolderView/>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
+</Window>

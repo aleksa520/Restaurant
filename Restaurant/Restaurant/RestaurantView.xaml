@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="Restaurant.Restaurant1.RestaurantView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Restaurant.Restaurant1"
+             xmlns:table="clr-namespace:Restaurant.Table"
+             xmlns:tableButton="clr-namespace:Restaurant.TableButton"
+             xmlns:common="clr-namespace:Restaurant.Common"
+             xmlns:tablebutton="clr-namespace:Restaurant.TableButton"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.ColumnSpan="7"
+               Grid.RowSpan="8"
+            Source="/Assets/floor.jpg"
+               Stretch="Fill">
+        </Image>
+        <Border Grid.ColumnSpan="7">
+            <Grid Style="{StaticResource HeaderGrid}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    BorderBrush="{StaticResource ThemeTertiaryColor}"
+                    Style="{StaticResource HeaderButton}" Command="{Binding GoBackCommand}">
+                    <Image Source="/Assets/back.png" Style="{StaticResource HeaderButtonImage}" RenderTransformOrigin="0.591,0.5"/>
+                </Button>
+                <TextBlock Grid.Column="1" Text="Tables" Style="{StaticResource HeaderText}"/>
+            </Grid>
+        </Border>
+        <Border BorderThickness="2"
+                BorderBrush="{StaticResource ThemeTertiaryColor}"
+                Grid.Row="2"
+              Grid.Column="1">
+            <Grid Height="400"   
+              Width="800"
+            Grid.Row="2"
+              Grid.Column="1">
+                <StackPanel Height="400" Width="800">
+                    <ItemsControl ItemsSource="{Binding TableButtons}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <tablebutton:TableButtonView Width="95" Height="95" DataContext="{Binding}" Grid.Row="{Binding TableRow}" Grid.Column="{Binding TableColumn}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
